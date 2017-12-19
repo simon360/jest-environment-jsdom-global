@@ -1,13 +1,12 @@
 {
   "name": "jest-environment-jsdom-global",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
+  "main": "environment.js",
   "author": "Simon Andrews <me@simonandrews.ca>",
   "license": "MIT",
   "scripts": {
     "test": "jest"
   },
-  "main": "environment.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/simon360/jest-environment-jsdom-global.git"
