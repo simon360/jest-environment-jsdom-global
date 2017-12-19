@@ -4,11 +4,11 @@ module.exports = class JSDOMEnvironmentGlobal extends JSDOMEnvironment {
   constructor(config) {
     super(config);
 
-    global.jsdom = this.dom;
+    this.global.jsdom = this.dom;
   }
 
   teardown() {
-    global.jsdom = null;
+    this.global.jsdom = null;
 
     return super.teardown();
   }
