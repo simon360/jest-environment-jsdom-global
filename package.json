@@ -1,0 +1,16 @@
+{
+  "name": "test-environment-for-jest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Simon Andrews <simon.andrews@thomsonreuters.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.0.1"
+  },
+  "jest": {
+    "testEnvironment": "./environment.js"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
