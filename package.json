@@ -1,16 +1,21 @@
 {
-  "name": "test-environment-for-jest",
+  "name": "jest-environment-jsdom-global",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Simon Andrews <simon.andrews@thomsonreuters.com>",
+  "author": "Simon Andrews <me@simonandrews.ca>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "main": "environment.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simon360/jest-environment-jsdom-global.git"
+  },
   "devDependencies": {
     "jest": "^22.0.1"
   },
   "jest": {
     "testEnvironment": "./environment.js"
-  },
-  "scripts": {
-    "test": "jest"
   }
 }

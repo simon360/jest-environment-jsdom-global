@@ -1,42 +1,43 @@
-# Testing ground for a custom Jest environment using JSDom
+# Jest environment for a globally-exposed JSDOM
+
+> Similar to the standard [`jest-environment-jsdom`](https://github.com/facebook/jest/tree/master/packages/jest-environment-jsdom), but exposes `jsdom` so that you can reconfigure it from your test suites.
 
 For more information, see [this discussion](https://github.com/facebook/jest/issues/5124) in the Jest repository.
 
-It should reproduce an issue with setting `global.jsdom`.
+## Installation and configuration
 
-## How to use
+Install the package with `yarn`:
 
-Install the packages with `yarn`, then run `yarn test`. Currently, this should throw an exception because `jsdom` is undefined.
-
-## Expected error output
-
+```shell
+yarn add --dev jest-environment-jsdom-global
 ```
-[]$ yarn test
-yarn run v1.3.2
-$ jest
- FAIL  __tests__/tests.js
-  test suite
-    ✕ should not fail (5ms)
 
-  ● test suite › should not fail
+or `npm`:
 
-    ReferenceError: jsdom is not defined
+```shell
+npm install --save-dev jest-environment-jsdom-global
+```
 
-      1 | describe("test suite", () => {
-      2 |   it("should not fail", () => {
-    > 3 |     jsdom.reconfigure({
-      4 |       url: "https://www.example.com/"
-      5 |     });
-      6 |   });
+Then, add it to your Jest configuration:
 
-      at Object.it (__tests__/tests.js:3:5)
+```json
+"jest": {
+  "testEnvironment": "jest-environment-jsdom-global"
+}
+```
 
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        1.107s
-Ran all test suites.
-error Command failed with exit code 1.
-info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-[]$
+For more information, see the [Jest documentation on `testEnvironment`](https://facebook.github.io/jest/docs/en/configuration.html#testenvironment-string).
+
+## Using JSDOM in your test suite
+
+You can access the `jsdom` object globally in your test suite. For example, here's a test that changes the URL for your test environment (using [`reconfigure`](https://github.com/tmpvar/jsdom#reconfiguring-the-jsdom-with-reconfiguresettings)):
+
+```javascript
+describe("test suite", () => {
+  it("should not fail", () => {
+    jsdom.reconfigure({
+      url: "https://www.example.com/"
+    });
+  });
+});
 ```
