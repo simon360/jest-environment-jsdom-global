@@ -41,3 +41,33 @@ describe("test suite", () => {
   });
 });
 ```
+
+## Frequently Asked Questions
+
+### Why can't I use `Object.defineProperty`?
+
+Jest's browser environment is based on JSDOM. JSDOM used to allow you to use `Object.defineProperty` to update certain properties on `window`; in particular, you could change parts of `window.location`, or `window.top`, as you need to.
+
+However, in recent versions, JSDOM's API has changed; the preferred way to mock `window.location` and its child properties is to use [`reconfigure`](https://github.com/tmpvar/jsdom#reconfiguring-the-jsdom-with-reconfiguresettings). Jest is using version 11 of JSDOM as of Jest 22; as a result, tests that used `Object.defineProperty` may no longer work on certain properties of `window`.
+
+Currently, Jest does not expose the JSDOM `reconfigure` method inside test suites. The `jest-environment-jsdom-global` package is meant to solve this problem: it adds `jsdom` as a global, so you can reconfigure it within your tests.
+
+### How can I mock `window.location.href`?
+
+In your test, you can set the URL using:
+
+```javascript
+jsdom.reconfigure({
+  url: "https://www.example.com/"
+});
+```
+
+### How can I mock `window.location.hash`?
+
+You need to provide a full URL, not just the hash. Similarly to above, you can do:
+
+```javascript
+jsdom.reconfigure({
+  url: "https://www.example.com/#myHash"
+});
+```
