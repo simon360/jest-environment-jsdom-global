@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/simon360/jest-environment-jsdom-global.git"
   },
+  "peerDependencies": {
+    "jest-environment-jsdom": "22.x"
+  },
   "devDependencies": {
     "jest": "^22.0.1"
   },
