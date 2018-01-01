@@ -9,13 +9,13 @@ For more information, see [this discussion](https://github.com/facebook/jest/iss
 Install the package with `yarn`:
 
 ```shell
-yarn add --dev jest-environment-jsdom-global
+yarn add --dev jest-environment-jsdom-global jest-environment-jsdom
 ```
 
 or `npm`:
 
 ```shell
-npm install --save-dev jest-environment-jsdom-global
+npm install --save-dev jest-environment-jsdom-global jest-environment-jsdom
 ```
 
 Then, add it to your Jest configuration:
