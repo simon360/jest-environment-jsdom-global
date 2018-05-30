@@ -12,10 +12,10 @@
     "url": "https://github.com/simon360/jest-environment-jsdom-global.git"
   },
   "peerDependencies": {
-    "jest-environment-jsdom": "22.x"
+    "jest-environment-jsdom": "22.x || 23.x"
   },
   "devDependencies": {
-    "jest": "^22.0.1"
+    "jest": "^23.0.1"
   },
   "jest": {
     "testEnvironment": "./environment.js"
