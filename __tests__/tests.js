@@ -19,7 +19,7 @@ jest.mock(
     }
 );
 
-describe("test suite", () => {
+describe("in isolation", () => {
   it("should set jsdom on its global object", () => {
     const environment = new jestEnvironmentJSDOMGlobal();
 
@@ -32,5 +32,17 @@ describe("test suite", () => {
     environment.teardown();
 
     expect(environment.global.jsdom).toBe(null);
+  });
+});
+
+describe("e2e", () => {
+  it("should set url successfully", () => {
+    const testHostname = "www.notadomain.org";
+
+    jsdom.reconfigure({
+      url: `https://${testHostname}`
+    });
+
+    expect(window.location.hostname).toBe(testHostname);
   });
 });
