@@ -15,7 +15,7 @@
     "jest-environment-jsdom": "22.x || 23.x || 24.x"
   },
   "devDependencies": {
-    "jest": "^23.0.1"
+    "jest": "^24.0.0"
   },
   "jest": {
     "testEnvironment": "./environment.js"
