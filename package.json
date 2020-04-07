@@ -5,6 +5,7 @@
   "author": "Simon Andrews <me@simonandrews.ca>",
   "license": "MIT",
   "scripts": {
+    "format": "prettier --write .",
     "test": "jest"
   },
   "repository": {
@@ -15,7 +16,8 @@
     "jest-environment-jsdom": "22.x || 23.x || 24.x || 25.x"
   },
   "devDependencies": {
-    "jest": "^25.1.0"
+    "jest": "^25.1.0",
+    "prettier": "^2.0.4"
   },
   "jest": {
     "testEnvironment": "./environment.js"

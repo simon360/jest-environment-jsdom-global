@@ -36,7 +36,7 @@ You can access the `jsdom` object globally in your test suite. For example, here
 describe("test suite", () => {
   it("should not fail", () => {
     jsdom.reconfigure({
-      url: "https://www.example.com/"
+      url: "https://www.example.com/",
     });
   });
 });
@@ -58,7 +58,7 @@ In your test, you can set the URL using:
 
 ```javascript
 jsdom.reconfigure({
-  url: "https://www.example.com/"
+  url: "https://www.example.com/",
 });
 ```
 
@@ -68,6 +68,6 @@ You need to provide a full URL, not just the hash. Similarly to above, you can d
 
 ```javascript
 jsdom.reconfigure({
-  url: "https://www.example.com/#myHash"
+  url: "https://www.example.com/#myHash",
 });
 ```
