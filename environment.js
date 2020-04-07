@@ -8,8 +8,8 @@ try {
 }
 
 module.exports = class JSDOMEnvironmentGlobal extends JSDOMEnvironment {
-  constructor(config) {
-    super(config);
+  constructor(config, options) {
+    super(config, options);
 
     this.global.jsdom = this.dom;
   }
