@@ -1,4 +1,7 @@
 __tests__/
+.github/
 .vscode/
 .prettierrc
+.yarnrc
 yarn.lock
+yarn-error.log
