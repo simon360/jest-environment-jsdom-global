@@ -13,7 +13,7 @@
     "url": "https://github.com/simon360/jest-environment-jsdom-global.git"
   },
   "peerDependencies": {
-    "jest-environment-jsdom": "22.x || 23.x || 24.x || 25.x"
+    "jest-environment-jsdom": "22.x || 23.x || 24.x || 25.x || 26.x"
   },
   "devDependencies": {
     "jest": "^26.0.1",
