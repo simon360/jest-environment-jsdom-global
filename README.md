@@ -42,7 +42,9 @@ describe("test suite", () => {
 });
 ```
 
-## Using JSDOM 16
+## Using JSDOM 16 (Jest 25 and lower)
+
+> NOTE: Jest 26 uses JSDOM 16 out of the box. These instructions only apply for versions of Jest < 26.0.0.
 
 If you want to swap `jest-environment-jsdom` for `jest-environment-jsdom-sixteen`, simply install it.
 
