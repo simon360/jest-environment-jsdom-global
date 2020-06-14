@@ -16,7 +16,7 @@
     "jest-environment-jsdom": "22.x || 23.x || 24.x || 25.x"
   },
   "devDependencies": {
-    "jest": "^25.2.7",
+    "jest": "^26.0.1",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "prettier": "^2.0.4"
   },
