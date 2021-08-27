@@ -1,6 +1,6 @@
 # Jest environment for a globally-exposed JSDOM
 
-> Similar to the standard [`jest-environment-jsdom`](https://github.com/facebook/jest/tree/master/packages/jest-environment-jsdom), but exposes `jsdom` so that you can reconfigure it from your test suites.
+> Similar to the standard [`jest-environment-jsdom`](https://github.com/facebook/jest/tree/main/packages/jest-environment-jsdom), but exposes `jsdom` so that you can reconfigure it from your test suites.
 
 For more information, see [this discussion](https://github.com/facebook/jest/issues/5124) in the Jest repository.
 
