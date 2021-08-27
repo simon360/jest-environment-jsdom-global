@@ -1,6 +1,6 @@
 {
   "name": "jest-environment-jsdom-global",
-  "version": "2.0.4",
+  "version": "3.0.0",
   "main": "environment.js",
   "author": "Simon Andrews <me@simonandrews.ca>",
   "license": "MIT",
