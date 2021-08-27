@@ -1,11 +1,4 @@
-let JSDOMEnvironment;
-
-try {
-  // Use jest-environment-jsdom-sixteen if it exists
-  JSDOMEnvironment = require("jest-environment-jsdom-sixteen");
-} catch (error) {
-  JSDOMEnvironment = require("jest-environment-jsdom");
-}
+const JSDOMEnvironment = require("jest-environment-jsdom");
 
 module.exports = class JSDOMEnvironmentGlobal extends JSDOMEnvironment {
   constructor(config, options) {

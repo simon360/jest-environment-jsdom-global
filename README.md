@@ -42,14 +42,6 @@ describe("test suite", () => {
 });
 ```
 
-## Using JSDOM 16 (Jest 25 and lower)
-
-> NOTE: Jest 26 uses JSDOM 16 out of the box. These instructions only apply for versions of Jest < 26.0.0.
-
-If you want to swap `jest-environment-jsdom` for `jest-environment-jsdom-sixteen`, simply install it.
-
-When `jest-environment-jsdom-global` is able to find the `jest-environment-jsdom-sixteen` package, that package will be used instead of `jest-environment-jsdom`.
-
 ## Frequently Asked Questions
 
 ### Why can't I use `Object.defineProperty`?

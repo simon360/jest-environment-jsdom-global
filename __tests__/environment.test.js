@@ -14,26 +14,14 @@ const MockEnvironment = function () {
 const MockDefaultEnvironment = jest.fn(MockEnvironment);
 MockDefaultEnvironment.prototype.teardown = jest.fn();
 
-const MockSixteenEnvironment = jest.fn(MockEnvironment);
-MockSixteenEnvironment.prototype.teardown = jest.fn();
-
 describe("using jest-environment-jsdom", () => {
-  // Under this describe block, any call to
-  // require('jest-environment-jsdom-sixteen') will result in an exception being
-  // thrown - as it would in an environment where -sixteen hasn't been
-  // installed.
   let jestEnvironmentJSDOMGlobal;
-
   let mockJestEnvironmentJsdom;
 
   beforeEach(() => {
     jest.clearAllMocks();
 
     jest.mock("jest-environment-jsdom", () => MockDefaultEnvironment);
-
-    jest.mock("jest-environment-jsdom-sixteen", () => {
-      throw new Error("jest-environment-jsdom-sixteen is not installed");
-    });
 
     mockJestEnvironmentJsdom = require("jest-environment-jsdom");
 
@@ -60,38 +48,5 @@ describe("using jest-environment-jsdom", () => {
     environment.teardown();
 
     expect(environment.global.jsdom).toBe(null);
-  });
-});
-
-describe("using jest-environment-jsdom-sixteen", () => {
-  // Under this describe block, jest-environment-jsdom-sixteen resolves without
-  // error. As a failsafe, jest-environment-jsdom now throws an error, since it
-  // should never be `require`d in this case.
-  let jestEnvironmentJSDOMGlobal;
-
-  let mockJestEnvironmentJsdomSixteen;
-
-  beforeEach(() => {
-    jest.clearAllMocks();
-
-    jest.mock("jest-environment-jsdom-sixteen", () => MockSixteenEnvironment);
-
-    jest.mock("jest-environment-jsdom", () => {
-      throw new Error(
-        "jest-environment-jsdom was used, but should not have been"
-      );
-    });
-
-    mockJestEnvironmentJsdomSixteen = require("jest-environment-jsdom-sixteen");
-
-    jest.isolateModules(() => {
-      jestEnvironmentJSDOMGlobal = require("../environment.js");
-    });
-  });
-
-  test("should instantiate using jest-environment-jsdom-sixteen", () => {
-    new jestEnvironmentJSDOMGlobal();
-
-    expect(mockJestEnvironmentJsdomSixteen).toHaveBeenCalledTimes(1);
   });
 });
