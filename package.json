@@ -17,7 +17,6 @@
   },
   "devDependencies": {
     "jest": "^26.0.1",
-    "jest-environment-jsdom-sixteen": "^1.0.3",
     "prettier": "^2.0.4"
   },
   "jest": {
