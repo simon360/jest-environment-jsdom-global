@@ -4,6 +4,9 @@
   "main": "environment.js",
   "author": "Simon Andrews <me@simonandrews.ca>",
   "license": "MIT",
+  "engines": {
+    "node": ">= 12"
+  },
   "scripts": {
     "format": "prettier --write .",
     "test": "jest"
