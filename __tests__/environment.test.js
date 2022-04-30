@@ -21,9 +21,12 @@ describe("using jest-environment-jsdom", () => {
   beforeEach(() => {
     jest.clearAllMocks();
 
-    jest.mock("jest-environment-jsdom", () => MockDefaultEnvironment);
+    jest.mock("jest-environment-jsdom", () => ({
+      __esModule: true,
+      default: MockDefaultEnvironment,
+    }));
 
-    mockJestEnvironmentJsdom = require("jest-environment-jsdom");
+    mockJestEnvironmentJsdom = require("jest-environment-jsdom").default;
 
     jest.isolateModules(() => {
       jestEnvironmentJSDOMGlobal = require("../environment.js");
