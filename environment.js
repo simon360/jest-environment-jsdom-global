@@ -1,4 +1,9 @@
-const { default: JSDOMEnvironment } = require("jest-environment-jsdom");
+const pkg = require("jest-environment-jsdom");
+
+let JSDOMEnvironment = pkg;
+if (pkg.default) {
+  JSDOMEnvironment = pkg.default;
+}
 
 module.exports = class JSDOMEnvironmentGlobal extends JSDOMEnvironment {
   constructor(config, options) {
