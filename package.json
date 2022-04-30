@@ -19,8 +19,8 @@
     "jest-environment-jsdom": "22.x || 23.x || 24.x || 25.x || 26.x || 27.x || 28.x"
   },
   "devDependencies": {
-    "jest": "^27.1.0",
-    "prettier": "^2.3.2"
+    "jest": "^28.0.3",
+    "prettier": "^2.6.2"
   },
   "jest": {
     "testEnvironment": "./environment.js"
