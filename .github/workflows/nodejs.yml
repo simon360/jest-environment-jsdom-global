@@ -27,3 +27,7 @@ jobs:
       - run: yarn test
         env:
           CI: true
+      - run: yarn add jest@27.x jest-environment-jsdom@27.x
+      - run: yarn test
+        env:
+          CI: true
