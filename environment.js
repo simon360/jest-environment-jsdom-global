@@ -6,15 +6,13 @@ if (pkg.default) {
 }
 
 module.exports = class JSDOMEnvironmentGlobal extends JSDOMEnvironment {
-  constructor(config, options) {
-    super(config, options);
-
+  async setup() {
+    await super.setup();
     this.global.jsdom = this.dom;
   }
 
-  teardown() {
-    this.global.jsdom = null;
-
-    return super.teardown();
+  async teardown() {
+    this.global.jsdom = undefined;
+    await super.teardown();
   }
 };

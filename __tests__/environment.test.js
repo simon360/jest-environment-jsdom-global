@@ -13,6 +13,7 @@ const MockEnvironment = function () {
 
 const MockDefaultEnvironment = jest.fn(MockEnvironment);
 MockDefaultEnvironment.prototype.teardown = jest.fn();
+MockDefaultEnvironment.prototype.setup = jest.fn();
 
 describe("using jest-environment-jsdom", () => {
   let jestEnvironmentJSDOMGlobal;
@@ -39,8 +40,10 @@ describe("using jest-environment-jsdom", () => {
     expect(mockJestEnvironmentJsdom).toHaveBeenCalledTimes(1);
   });
 
-  test("should set jsdom on its global object", () => {
+  test("should set jsdom on its global object", async () => {
     const environment = new jestEnvironmentJSDOMGlobal();
+
+    await environment.setup()
 
     expect(environment.global.jsdom).toBe(mockDom);
   });
@@ -50,6 +53,6 @@ describe("using jest-environment-jsdom", () => {
 
     environment.teardown();
 
-    expect(environment.global.jsdom).toBe(null);
+    expect(environment.global.jsdom).toBe(undefined);
   });
 });
