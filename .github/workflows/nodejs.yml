@@ -16,6 +16,9 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
+        jest-version: [27.x, 28.x]
+
+    name: Tests - Node v${{ matrix.node-version }}, Jest v${{ matrix.jest-version }}
 
     steps:
       - uses: actions/checkout@v2
@@ -24,10 +27,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn --frozen-lockfile
+      - run: yarn add jest@${{ matrix.jest-version }} jest-environment-jsdom@${{ matrix.jest-version }}
       - run: yarn test
-        env:
-          CI: true
-      - run: yarn add jest@27.x jest-environment-jsdom@27.x
-      - run: yarn test
-        env:
-          CI: true
