@@ -35,12 +35,12 @@ describe("using jest-environment-jsdom", () => {
   });
 
   test("should instantiate using jest-environment-jsdom", () => {
-    const environment = new jestEnvironmentJSDOMGlobal();
+    new jestEnvironmentJSDOMGlobal();
 
     expect(mockJestEnvironmentJsdom).toHaveBeenCalledTimes(1);
   });
 
-  test("should set jsdom on its global object", async () => {
+  test("should set jsdom on setup", async () => {
     const environment = new jestEnvironmentJSDOMGlobal();
 
     await environment.setup()
