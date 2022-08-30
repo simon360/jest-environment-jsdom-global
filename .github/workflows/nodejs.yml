@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
-        jest-version: [27.x, 28.x]
+        jest-version: [27.x, 29.x]
 
     name: Tests - Node v${{ matrix.node-version }}, Jest v${{ matrix.jest-version }}
 
