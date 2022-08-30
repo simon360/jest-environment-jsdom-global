@@ -43,7 +43,7 @@ describe("using jest-environment-jsdom", () => {
   test("should set jsdom on setup", async () => {
     const environment = new jestEnvironmentJSDOMGlobal();
 
-    await environment.setup()
+    await environment.setup();
 
     expect(environment.global.jsdom).toBe(mockDom);
   });
