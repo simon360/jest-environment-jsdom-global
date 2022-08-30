@@ -5,7 +5,7 @@
   "author": "Simon Andrews <me@simonandrews.ca>",
   "license": "MIT",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 14"
   },
   "scripts": {
     "format": "prettier --write .",
